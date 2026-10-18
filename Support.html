@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Payment - Growth Capital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131b2e',
+                        cardBorder: '#1e293b',
+                        brandGreen: '#10b981',
+                        brandGreenHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation Bar -->
+    <header class="flex items-center justify-between px-4 py-4 border-b border-slate-800 bg-darkBg/80 backdrop-blur sticky top-0 z-30">
+        <!-- Logo -->
+        <a href="Dashboard.html" class="flex items-center space-x-2">
+            <div class="bg-brandGreen/20 text-brandGreen p-2 rounded-lg">
+                <i class="fa-solid fa-chart-line text-lg"></i>
+            </div>
+            <span class="font-bold tracking-wider text-sm sm:text-base">GROWTH CAPITAL</span>
+        </a>
+
+        <!-- Top Right Actions -->
+        <div class="flex items-center space-x-3">
+            <!-- Settings Button -->
+            <a href="Settings.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-xl flex items-center space-x-2 transition border border-slate-700">
+                <i class="fa-solid fa-gear text-brandGreen"></i>
+                <span class="text-xs font-medium">Settings</span>
+            </a>
+            
+            <!-- Quick Logout Button -->
+            <a href="Logout.html" class="bg-slate-800 hover:bg-red-900/40 text-slate-300 hover:text-red-400 p-2.5 rounded-xl transition border border-slate-700">
+                <i class="fa-solid fa-right-from-bracket text-sm"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto w-full p-4 space-y-5 mb-20">
+        
+        <!-- Back Button & Header -->
+        <div class="flex items-center space-x-3">
+            <a href="Investment.html" class="bg-cardBg border border-cardBorder text-slate-300 hover:text-white p-2 rounded-xl text-xs transition">
+                <i class="fa-solid fa-chevron-left text-sm"></i>
+            </a>
+            <div>
+                <h1 class="text-lg font-bold text-slate-100">Make Investment Payment</h1>
+                <p class="text-[11px] text-slate-400">Transfer funds to activate your tier plan</p>
+            </div>
+        </div>
+
+        <!-- Bank Account Deposit Card -->
+        <div class="bg-gradient-to-b from-cardBg to-darkBg border border-brandGreen/40 rounded-2xl p-5 space-y-4 shadow-xl relative overflow-hidden">
+            <div class="flex justify-between items-center border-b border-slate-800/80 pb-3">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-brandGreen/10 text-brandGreen p-2 rounded-lg">
+                        <i class="fa-solid fa-building-columns text-sm"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-200 uppercase tracking-wider">Company Bank Account</span>
+                </div>
+                <span class="bg-brandGreen/10 text-brandGreen text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-brandGreen/20">
+                    Instant Deposit
+                </span>
+            </div>
+
+            <!-- Bank Details Row -->
+            <div class="space-y-3 bg-darkBg/80 p-4 rounded-xl border border-slate-800">
+                <!-- Bank Name -->
+                <div class="flex justify-between items-center text-xs">
+                    <span class="text-slate-400">Bank Name:</span>
+                    <span class="font-bold text-slate-100">OPay Digital Services</span>
+                </div>
+
+                <!-- Account Number -->
+                <div class="flex justify-between items-center text-xs">
+                    <span class="text-slate-400">Account Number:</span>
+                    <div class="flex items-center space-x-2">
+                        <span id="accNumber" class="font-mono font-bold text-amber-400 text-sm">8123456789</span>
+                        <button onclick="copyAccNumber()" class="bg-slate-800 hover:bg-slate-700 text-brandGreen px-2 py-1 rounded text-[10px] font-bold transition">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Account Name -->
+                <div class="flex justify-between items-center text-xs">
+                    <span class="text-slate-400">Account Name:</span>
+                    <span class="font-bold text-slate-100">Growth Capital Ltd</span>
+                </div>
+            </div>
+
+            <!-- Important Instructions -->
+            <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 text-[10px] text-amber-300 space-y-1">
+                <span class="font-bold block text-amber-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Payment Notice:</span>
+                <p>Transfer the exact amount for your selected tier. Your plan will be activated within 10-15 minutes after confirmation.</p>
+            </div>
+        </div>
+
+        <!-- Payment Confirmation Form -->
+        <form onsubmit="handlePaymentSubmit(event)" class="bg-cardBg border border-cardBorder rounded-2xl p-5 space-y-4 shadow-lg">
+            <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider">Confirm Payment</h3>
+
+            <!-- Sender Name -->
+            <div class="space-y-1.5">
+                <label for="senderName" class="text-xs font-semibold text-slate-300">Sender Account Name</label>
+                <div class="flex items-center bg-darkBg border border-slate-800 rounded-xl px-3 py-2.5 focus-within:border-brandGreen transition">
+                    <i class="fa-solid fa-user text-slate-500 text-xs mr-2.5"></i>
+                    <input 
+                        type="text" 
+                        id="senderName" 
+                        placeholder="Name on bank account used for transfer" 
+                        required 
+                        class="bg-transparent text-xs text-slate-100 placeholder-slate-500 w-full outline-none"
+                    />
+                </div>
+            </div>
+
+            <!-- Amount Sent -->
+            <div class="space-y-1.5">
+                <label for="amountPaid" class="text-xs font-semibold text-slate-300">Amount Sent (₦)</label>
+                <div class="flex items-center bg-darkBg border border-slate-800 rounded-xl px-3 py-2.5 focus-within:border-brandGreen transition">
+                    <i class="fa-solid fa-money-bill-wave text-slate-500 text-xs mr-2.5"></i>
+                    <input 
+                        type="number" 
+                        id="amountPaid" 
+                        placeholder="e.g. 10000" 
+                        required 
+                        class="bg-transparent text-xs text-slate-100 placeholder-slate-500 w-full outline-none font-mono"
+                    />
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+                type="submit" 
+                class="w-full bg-brandGreen hover:bg-brandGreenHover text-darkBg font-bold py-3 rounded-xl text-xs transition shadow-md shadow-brandGreen/20 flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>I Have Made Payment</span>
+            </button>
+        </form>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-darkBg/95 backdrop-blur border-t border-slate-800 py-3 px-6 flex justify-around items-center z-20 max-w-md mx-auto">
+        <a href="Dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-house text-base"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="Investment.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-chart-pie text-base"></i>
+            <span class="text-[10px] font-medium">Tiers</span>
+        </a>
+        <a href="Refer.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-users text-base"></i>
+            <span class="text-[10px] font-medium">Referrals</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script>
+        function copyAccNumber() {
+            const accNum = document.getElementById('accNumber').innerText;
+            navigator.clipboard.writeText(accNum).then(() => {
+                alert('Account number copied to clipboard: ' + accNum);
+            });
+        }
+
+        function handlePaymentSubmit(e) {
+            e.preventDefault();
+            alert('Payment submission received! Your deposit is being verified and will reflect in your active investments shortly.');
+            window.location.href = "Dashboard.html";
+        }
+    </script>
+
+</body>
+</html>

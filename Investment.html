@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Tiers - Growth Capital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131b2e',
+                        cardBorder: '#1e293b',
+                        brandGreen: '#10b981',
+                        brandGreenHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation Bar -->
+    <header class="flex items-center justify-between px-4 py-4 border-b border-slate-800 bg-darkBg/80 backdrop-blur sticky top-0 z-30">
+        <!-- Logo -->
+        <a href="Dashboard.html" class="flex items-center space-x-2">
+            <div class="bg-brandGreen/20 text-brandGreen p-2 rounded-lg">
+                <i class="fa-solid fa-chart-line text-lg"></i>
+            </div>
+            <span class="font-bold tracking-wider text-sm sm:text-base">GROWTH CAPITAL</span>
+        </a>
+
+        <!-- Top Right Actions -->
+        <div class="flex items-center space-x-3">
+            <!-- Settings Button -->
+            <a href="Settings.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-xl flex items-center space-x-2 transition border border-slate-700">
+                <i class="fa-solid fa-gear text-brandGreen"></i>
+                <span class="text-xs font-medium">Settings</span>
+            </a>
+            
+            <!-- Quick Logout Button -->
+            <a href="Logout.html" class="bg-slate-800 hover:bg-red-900/40 text-slate-300 hover:text-red-400 p-2.5 rounded-xl transition border border-slate-700">
+                <i class="fa-solid fa-right-from-bracket text-sm"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto w-full p-4 space-y-5 mb-20">
+        
+        <!-- Page Title Header -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-bold tracking-tight text-slate-100">Investment Tiers</h1>
+            <p class="text-xs text-slate-400">Choose a package to start earning daily returns.</p>
+        </div>
+
+        <!-- Tiers List -->
+        <div class="space-y-4">
+
+            <!-- Tier 1 -->
+            <div class="bg-cardBg border border-blue-500/40 rounded-2xl p-4 space-y-3 relative overflow-hidden shadow-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-base font-bold text-slate-100">Tier 1</h3>
+                    <span class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-blue-500/20 uppercase tracking-wider">
+                        TIER 1
+                    </span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-300 bg-darkBg/40 p-3 rounded-xl border border-slate-800">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Investment:</span>
+                        <span class="font-bold text-slate-100">₦10,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Duration:</span>
+                        <span class="font-bold text-blue-400">4 Days</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Daily Return:</span>
+                        <span class="font-bold text-amber-400">₦4,400 / day</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-800/80 pt-1.5">
+                        <span class="text-slate-400">Guaranteed Gain:</span>
+                        <span class="font-bold text-brandGreen">₦17,600</span>
+                    </div>
+                </div>
+                <a href="Support.html" class="block text-center w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    Invest ₦10,000 Now
+                </a>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="bg-cardBg border border-purple-500/40 rounded-2xl p-4 space-y-3 relative overflow-hidden shadow-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-base font-bold text-slate-100">Tier 2</h3>
+                    <span class="bg-purple-500/10 text-purple-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-purple-500/20 uppercase tracking-wider">
+                        TIER 2
+                    </span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-300 bg-darkBg/40 p-3 rounded-xl border border-slate-800">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Investment:</span>
+                        <span class="font-bold text-slate-100">₦28,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Duration:</span>
+                        <span class="font-bold text-purple-400">4 Days</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Daily Return:</span>
+                        <span class="font-bold text-amber-400">₦12,800 / day</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-800/80 pt-1.5">
+                        <span class="text-slate-400">Guaranteed Gain:</span>
+                        <span class="font-bold text-brandGreen">₦51,200</span>
+                    </div>
+                </div>
+                <a href="Support.html" class="block text-center w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    Invest ₦28,000 Now
+                </a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="bg-cardBg border border-teal-500/40 rounded-2xl p-4 space-y-3 relative overflow-hidden shadow-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-base font-bold text-slate-100">Tier 3</h3>
+                    <span class="bg-teal-500/10 text-teal-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-teal-500/20 uppercase tracking-wider">
+                        TIER 3
+                    </span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-300 bg-darkBg/40 p-3 rounded-xl border border-slate-800">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Investment:</span>
+                        <span class="font-bold text-slate-100">₦50,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Duration:</span>
+                        <span class="font-bold text-teal-400">5 Days</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Daily Return:</span>
+                        <span class="font-bold text-amber-400">₦19,000 / day</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-800/80 pt-1.5">
+                        <span class="text-slate-400">Guaranteed Gain:</span>
+                        <span class="font-bold text-brandGreen">₦95,000</span>
+                    </div>
+                </div>
+                <a href="Support.html" class="block text-center w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    Invest ₦50,000 Now
+                </a>
+            </div>
+
+            <!-- Tier 4 -->
+            <div class="bg-cardBg border border-amber-500/40 rounded-2xl p-4 space-y-3 relative overflow-hidden shadow-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-base font-bold text-slate-100">Tier 4</h3>
+                    <span class="bg-amber-500/10 text-amber-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-amber-500/20 uppercase tracking-wider">
+                        TIER 4
+                    </span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-300 bg-darkBg/40 p-3 rounded-xl border border-slate-800">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Investment:</span>
+                        <span class="font-bold text-slate-100">₦100,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Duration:</span>
+                        <span class="font-bold text-amber-400">5 Days</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Daily Return:</span>
+                        <span class="font-bold text-amber-400">₦39,000 / day</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-800/80 pt-1.5">
+                        <span class="text-slate-400">Guaranteed Gain:</span>
+                        <span class="font-bold text-brandGreen">₦195,000</span>
+                    </div>
+                </div>
+                <a href="Support.html" class="block text-center w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    Invest ₦100,000 Now
+                </a>
+            </div>
+
+            <!-- Tier 5 -->
+            <div class="bg-cardBg border border-emerald-500/40 rounded-2xl p-4 space-y-3 relative overflow-hidden shadow-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-base font-bold text-slate-100">Tier 5</h3>
+                    <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/20 uppercase tracking-wider">
+                        TIER 5
+                    </span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-300 bg-darkBg/40 p-3 rounded-xl border border-slate-800">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Investment:</span>
+                        <span class="font-bold text-slate-100">₦250,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Duration:</span>
+                        <span class="font-bold text-emerald-400">5 Days</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Daily Return:</span>
+                        <span class="font-bold text-amber-400">₦100,000 / day</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-800/80 pt-1.5">
+                        <span class="text-slate-400">Guaranteed Gain:</span>
+                        <span class="font-bold text-brandGreen">₦500,000</span>
+                    </div>
+                </div>
+                <a href="Support.html" class="block text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    Invest ₦250,000 Now
+                </a>
+            </div>
+
+            <!-- Tier 6 -->
+            <div class="bg-cardBg border border-rose-500/40 rounded-2xl p-4 space-y-3 relative overflow-hidden shadow-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-base font-bold text-slate-100">Tier 6</h3>
+                    <span class="bg-rose-500/10 text-rose-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-rose-500/20 uppercase tracking-wider">
+                        TIER 6
+                    </span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-300 bg-darkBg/40 p-3 rounded-xl border border-slate-800">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Investment:</span>
+                        <span class="font-bold text-slate-100">₦450,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Duration:</span>
+                        <span class="font-bold text-rose-400">6 Days</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Daily Return:</span>
+                        <span class="font-bold text-amber-400">₦156,000 / day</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-800/80 pt-1.5">
+                        <span class="text-slate-400">Guaranteed Gain:</span>
+                        <span class="font-bold text-brandGreen">₦936,000</span>
+                    </div>
+                </div>
+                <a href="Support.html" class="block text-center w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    Invest ₦450,000 Now
+                </a>
+            </div>
+
+            <!-- Tier 7 -->
+            <div class="bg-cardBg border border-indigo-500/40 rounded-2xl p-4 space-y-3 relative overflow-hidden shadow-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-base font-bold text-slate-100">Tier 7</h3>
+                    <span class="bg-indigo-500/10 text-indigo-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-indigo-500/20 uppercase tracking-wider">
+                        TIER 7
+                    </span>
+                </div>
+                <div class="space-y-1.5 text-xs text-slate-300 bg-darkBg/40 p-3 rounded-xl border border-slate-800">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Investment:</span>
+                        <span class="font-bold text-slate-100">₦700,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Duration:</span>
+                        <span class="font-bold text-indigo-400">6 Days</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Daily Return:</span>
+                        <span class="font-bold text-amber-400">₦252,000 / day</span>
+                    </div>
+                    <div class="flex justify-between border-t border-slate-800/80 pt-1.5">
+                        <span class="text-slate-400">Guaranteed Gain:</span>
+                        <span class="font-bold text-brandGreen">₦1,512,000</span>
+                    </div>
+                </div>
+                <a href="Support.html" class="block text-center w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    Invest ₦700,000 Now
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-darkBg/95 backdrop-blur border-t border-slate-800 py-3 px-6 flex justify-around items-center z-20 max-w-md mx-auto">
+        <a href="Dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-house text-base"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="Investment.html" class="flex flex-col items-center text-brandGreen space-y-1">
+            <i class="fa-solid fa-chart-pie text-base"></i>
+            <span class="text-[10px] font-medium">Tiers</span>
+        </a>
+        <a href="Refer.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-users text-base"></i>
+            <span class="text-[10px] font-medium">Referrals</span>
+        </a>
+    </nav>
+
+</body>
+</html>

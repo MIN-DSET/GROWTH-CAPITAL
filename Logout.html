@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Growth Capital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131b2e',
+                        cardBorder: '#1e293b',
+                        brandGreen: '#10b981',
+                        brandGreenHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-center items-center p-4">
+
+    <!-- Logout Confirmation Box -->
+    <main class="max-w-xs w-full bg-cardBg border border-cardBorder rounded-2xl p-6 text-center space-y-5 shadow-2xl relative overflow-hidden">
+        
+        <!-- Red Icon Glow -->
+        <div class="w-16 h-16 bg-red-500/10 text-red-400 rounded-full flex items-center justify-center mx-auto text-2xl border border-red-500/20">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <div class="space-y-1.5">
+            <h1 class="text-lg font-bold text-slate-100">Logging Out?</h1>
+            <p class="text-xs text-slate-400 leading-relaxed">
+                Are you sure you want to log out of your Growth Capital account?
+            </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-2 pt-2">
+            <!-- Confirm Logout Button -->
+            <button 
+                id="confirmLogoutBtn"
+                onclick="performLogout()" 
+                class="w-full bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/30 font-bold py-3 rounded-xl text-xs transition flex items-center justify-center space-x-2 cursor-pointer">
+                <i class="fa-solid fa-check"></i>
+                <span>Yes, Logout</span>
+            </button>
+
+            <!-- Cancel Button (Returns user to Dashboard) -->
+            <a 
+                href="Dashboard.html" 
+                class="block w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold py-3 rounded-xl text-xs transition border border-slate-700">
+                Cancel / Stay Logged In
+            </a>
+        </div>
+
+        <!-- Processing Message -->
+        <div id="loadingStatus" class="hidden text-xs text-slate-400 space-y-2 pt-2">
+            <i class="fa-solid fa-spinner fa-spin text-brandGreen text-lg"></i>
+            <p>Clearing session and logging out...</p>
+        </div>
+
+    </main>
+
+    <!-- Logout Script: Redirects back to index.html -->
+    <script>
+        function performLogout() {
+            const btn = document.getElementById('confirmLogoutBtn');
+            const loading = document.getElementById('loadingStatus');
+
+            btn.classList.add('hidden');
+            loading.classList.remove('hidden');
+
+            localStorage.clear();
+            sessionStorage.clear();
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1200);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Growth Capital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131b2e',
+                        cardBorder: '#1e293b',
+                        brandGreen: '#10b981',
+                        brandGreenHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation Bar -->
+    <header class="flex items-center justify-between px-4 py-4 border-b border-slate-800 bg-darkBg/80 backdrop-blur sticky top-0 z-30">
+        <!-- Logo -->
+        <a href="Dashboard.html" class="flex items-center space-x-2">
+            <div class="bg-brandGreen/20 text-brandGreen p-2 rounded-lg">
+                <i class="fa-solid fa-chart-line text-lg"></i>
+            </div>
+            <span class="font-bold tracking-wider text-sm sm:text-base">GROWTH CAPITAL</span>
+        </a>
+
+        <!-- Top Right Actions -->
+        <div class="flex items-center space-x-3">
+            <!-- Settings Button -->
+            <a href="Settings.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-xl flex items-center space-x-2 transition border border-slate-700">
+                <i class="fa-solid fa-gear text-brandGreen"></i>
+                <span class="text-xs font-medium">Settings</span>
+            </a>
+            
+            <!-- Quick Logout Button -->
+            <a href="Logout.html" class="bg-slate-800 hover:bg-red-900/40 text-slate-300 hover:text-red-400 p-2.5 rounded-xl transition border border-slate-700">
+                <i class="fa-solid fa-right-from-bracket text-sm"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto w-full p-4 space-y-5 mb-20">
+        
+        <!-- Back Button & Header -->
+        <div class="flex items-center space-x-3">
+            <a href="Settings.html" class="bg-cardBg border border-cardBorder text-slate-300 hover:text-white p-2 rounded-xl text-xs transition">
+                <i class="fa-solid fa-chevron-left text-sm"></i>
+            </a>
+            <div>
+                <h1 class="text-lg font-bold text-slate-100">Transaction History</h1>
+                <p class="text-[11px] text-slate-400">View all your deposits, yields, and withdrawals</p>
+            </div>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="flex items-center space-x-2 overflow-x-auto pb-1 text-xs">
+            <button class="bg-brandGreen text-darkBg font-bold px-3 py-1.5 rounded-xl shrink-0">All</button>
+            <button class="bg-cardBg border border-cardBorder text-slate-300 hover:bg-slate-800 px-3 py-1.5 rounded-xl shrink-0">Investments</button>
+            <button class="bg-cardBg border border-cardBorder text-slate-300 hover:bg-slate-800 px-3 py-1.5 rounded-xl shrink-0">Withdrawals</button>
+            <button class="bg-cardBg border border-cardBorder text-slate-300 hover:bg-slate-800 px-3 py-1.5 rounded-xl shrink-0">Referral Bonus</button>
+        </div>
+
+        <!-- Transaction List -->
+        <div class="space-y-2.5">
+            
+            <!-- Item 1: Yield Return -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between shadow-md">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-emerald-500/10 text-emerald-400 p-3 rounded-xl border border-emerald-500/20">
+                        <i class="fa-solid fa-arrow-down-left text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200">Tier 1 Investment Yield</h4>
+                        <p class="text-[10px] text-slate-400">Oct 12, 2026 • 04:30 PM</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs font-bold text-brandGreen">+₦17,600.00</span>
+                    <span class="block text-[9px] text-emerald-400 uppercase font-semibold">Successful</span>
+                </div>
+            </div>
+
+            <!-- Item 2: Task Reward -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between shadow-md">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-amber-500/10 text-amber-400 p-3 rounded-xl border border-amber-500/20">
+                        <i class="fa-solid fa-list-check text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200">Daily Micro Task Bonus</h4>
+                        <p class="text-[10px] text-slate-400">Oct 11, 2026 • 10:15 AM</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs font-bold text-brandGreen">+₦200.00</span>
+                    <span class="block text-[9px] text-emerald-400 uppercase font-semibold">Completed</span>
+                </div>
+            </div>
+
+            <!-- Item 3: Withdrawal -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between shadow-md">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-500/10 text-blue-400 p-3 rounded-xl border border-blue-500/20">
+                        <i class="fa-solid fa-arrow-up-right text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200">Bank Payout Withdrawal</h4>
+                        <p class="text-[10px] text-slate-400">Oct 05, 2026 • 01:20 PM</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs font-bold text-rose-400">-₦25,000.00</span>
+                    <span class="block text-[9px] text-emerald-400 uppercase font-semibold">Processed</span>
+                </div>
+            </div>
+
+            <!-- Item 4: Referral Bonus -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between shadow-md">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-purple-500/10 text-purple-400 p-3 rounded-xl border border-purple-500/20">
+                        <i class="fa-solid fa-user-plus text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200">Referral Bonus (Daniel K.)</h4>
+                        <p class="text-[10px] text-slate-400">Sep 30, 2026 • 09:00 AM</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs font-bold text-brandGreen">+₦2,800.00</span>
+                    <span class="block text-[9px] text-emerald-400 uppercase font-semibold">Credited</span>
+                </div>
+            </div>
+
+            <!-- Item 5: Tier Deposit -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between shadow-md">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-slate-800 text-slate-400 p-3 rounded-xl border border-slate-700">
+                        <i class="fa-solid fa-wallet text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200">Tier 2 Plan Purchase</h4>
+                        <p class="text-[10px] text-slate-400">Sep 24, 2026 • 11:45 AM</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs font-bold text-slate-300">-₦28,000.00</span>
+                    <span class="block text-[9px] text-emerald-400 uppercase font-semibold">Completed</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-darkBg/95 backdrop-blur border-t border-slate-800 py-3 px-6 flex justify-around items-center z-20 max-w-md mx-auto">
+        <a href="Dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-house text-base"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="Investment.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-chart-pie text-base"></i>
+            <span class="text-[10px] font-medium">Tiers</span>
+        </a>
+        <a href="Refer.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-users text-base"></i>
+            <span class="text-[10px] font-medium">Referrals</span>
+        </a>
+    </nav>
+
+</body>
+</html>

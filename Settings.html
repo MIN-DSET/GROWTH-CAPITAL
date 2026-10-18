@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Growth Capital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131b2e',
+                        cardBorder: '#1e293b',
+                        brandGreen: '#10b981',
+                        brandGreenHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation Bar -->
+    <header class="flex items-center justify-between px-4 py-4 border-b border-slate-800 bg-darkBg/80 backdrop-blur sticky top-0 z-30">
+        <!-- Logo -->
+        <a href="Dashboard.html" class="flex items-center space-x-2">
+            <div class="bg-brandGreen/20 text-brandGreen p-2 rounded-lg">
+                <i class="fa-solid fa-chart-line text-lg"></i>
+            </div>
+            <span class="font-bold tracking-wider text-sm sm:text-base">GROWTH CAPITAL</span>
+        </a>
+
+        <!-- Top Right Actions -->
+        <div class="flex items-center space-x-3">
+            <!-- Settings Active Button -->
+            <a href="Settings.html" class="bg-brandGreen/20 text-brandGreen px-3 py-2 rounded-xl flex items-center space-x-2 transition border border-brandGreen/30">
+                <i class="fa-solid fa-gear text-brandGreen"></i>
+                <span class="text-xs font-medium">Settings</span>
+            </a>
+            
+            <!-- Quick Logout Button -->
+            <a href="Logout.html" class="bg-slate-800 hover:bg-red-900/40 text-slate-300 hover:text-red-400 p-2.5 rounded-xl transition border border-slate-700">
+                <i class="fa-solid fa-right-from-bracket text-sm"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto w-full p-4 space-y-5 mb-20">
+        
+        <!-- Page Title Header -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-bold tracking-tight text-slate-100">Account Settings</h1>
+            <p class="text-xs text-slate-400">Manage your profile, security, transactions, and support options.</p>
+        </div>
+
+        <!-- User Profile Card -->
+        <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center space-x-3 shadow-lg">
+            <div class="bg-brandGreen/10 text-brandGreen p-3 rounded-2xl border border-brandGreen/20">
+                <i class="fa-solid fa-user-gear text-xl"></i>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold text-slate-100">Alex Johnson</h3>
+                <p class="text-xs text-slate-400">alex.johnson@growthcapital.ng</p>
+            </div>
+        </div>
+
+        <!-- Settings Options List -->
+        <div class="space-y-2.5">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1">Menu Options</h3>
+
+            <!-- Daily Tasks -->
+            <a href="Task.html" class="bg-cardBg hover:bg-slate-800/80 border border-cardBorder rounded-2xl p-4 flex items-center justify-between transition shadow-md group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="bg-amber-500/10 text-amber-400 p-2.5 rounded-xl border border-amber-500/20">
+                        <i class="fa-solid fa-list-check text-sm w-4 text-center"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200 group-hover:text-brandGreen transition">Daily Tasks</h4>
+                        <p class="text-[10px] text-slate-400">Earn ₦200 daily by completing activities</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-brandGreen transition"></i>
+            </a>
+
+            <!-- Change Username -->
+            <a href="Username.html" class="bg-cardBg hover:bg-slate-800/80 border border-cardBorder rounded-2xl p-4 flex items-center justify-between transition shadow-md group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="bg-brandGreen/10 text-brandGreen p-2.5 rounded-xl border border-brandGreen/20">
+                        <i class="fa-solid fa-user-pen text-sm w-4 text-center"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200 group-hover:text-brandGreen transition">Change Username</h4>
+                        <p class="text-[10px] text-slate-400">Update your account display name</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-brandGreen transition"></i>
+            </a>
+
+            <!-- Change Password -->
+            <a href="Password.html" class="bg-cardBg hover:bg-slate-800/80 border border-cardBorder rounded-2xl p-4 flex items-center justify-between transition shadow-md group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="bg-blue-500/10 text-blue-400 p-2.5 rounded-xl border border-blue-500/20">
+                        <i class="fa-solid fa-lock text-sm w-4 text-center"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200 group-hover:text-brandGreen transition">Change Password</h4>
+                        <p class="text-[10px] text-slate-400">Update your account security key</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-brandGreen transition"></i>
+            </a>
+
+            <!-- Transaction History -->
+            <a href="History.html" class="bg-cardBg hover:bg-slate-800/80 border border-cardBorder rounded-2xl p-4 flex items-center justify-between transition shadow-md group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="bg-purple-500/10 text-purple-400 p-2.5 rounded-xl border border-purple-500/20">
+                        <i class="fa-solid fa-clock-rotate-left text-sm w-4 text-center"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200 group-hover:text-brandGreen transition">Transaction History</h4>
+                        <p class="text-[10px] text-slate-400">View deposits, yields, and withdrawals</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-brandGreen transition"></i>
+            </a>
+
+            <!-- Bank & Payout Details -->
+            <a href="Bank.html" class="bg-cardBg hover:bg-slate-800/80 border border-cardBorder rounded-2xl p-4 flex items-center justify-between transition shadow-md group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="bg-teal-500/10 text-teal-400 p-2.5 rounded-xl border border-teal-500/20">
+                        <i class="fa-solid fa-building-columns text-sm w-4 text-center"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200 group-hover:text-brandGreen transition">Bank & Payout Details</h4>
+                        <p class="text-[10px] text-slate-400">Manage your withdrawal account details</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-brandGreen transition"></i>
+            </a>
+
+            <!-- Support & FAQ -->
+            <a href="Support.html" class="bg-cardBg hover:bg-slate-800/80 border border-cardBorder rounded-2xl p-4 flex items-center justify-between transition shadow-md group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="bg-rose-500/10 text-rose-400 p-2.5 rounded-xl border border-rose-500/20">
+                        <i class="fa-solid fa-headset text-sm w-4 text-center"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-200 group-hover:text-brandGreen transition">Support & FAQ</h4>
+                        <p class="text-[10px] text-slate-400">Get assistance and read answers</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-xs text-slate-500 group-hover:text-brandGreen transition"></i>
+            </a>
+
+            <!-- Logout Column -->
+            <a href="Logout.html" class="w-full bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 rounded-2xl p-4 flex items-center justify-between transition text-red-400 font-bold text-xs mt-4">
+                <div class="flex items-center space-x-3.5">
+                    <div class="bg-red-500/10 p-2.5 rounded-xl">
+                        <i class="fa-solid fa-right-from-bracket text-sm w-4 text-center"></i>
+                    </div>
+                    <span>Logout Account</span>
+                </div>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-darkBg/95 backdrop-blur border-t border-slate-800 py-3 px-6 flex justify-around items-center z-20 max-w-md mx-auto">
+        <a href="Dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-house text-base"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="Investment.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-chart-pie text-base"></i>
+            <span class="text-[10px] font-medium">Tiers</span>
+        </a>
+        <a href="Refer.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-users text-base"></i>
+            <span class="text-[10px] font-medium">Referrals</span>
+        </a>
+    </nav>
+
+</body>
+</html>

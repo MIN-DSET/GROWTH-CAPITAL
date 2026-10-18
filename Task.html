@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Tasks - Growth Capital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131b2e',
+                        cardBorder: '#1e293b',
+                        brandGreen: '#10b981',
+                        brandGreenHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation Bar -->
+    <header class="flex items-center justify-between px-4 py-4 border-b border-slate-800 bg-darkBg/80 backdrop-blur sticky top-0 z-30">
+        <!-- Logo -->
+        <a href="Dashboard.html" class="flex items-center space-x-2">
+            <div class="bg-brandGreen/20 text-brandGreen p-2 rounded-lg">
+                <i class="fa-solid fa-chart-line text-lg"></i>
+            </div>
+            <span class="font-bold tracking-wider text-sm sm:text-base">GROWTH CAPITAL</span>
+        </a>
+
+        <!-- Top Right Actions -->
+        <div class="flex items-center space-x-3">
+            <!-- Settings Button -->
+            <a href="Settings.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-xl flex items-center space-x-2 transition border border-slate-700">
+                <i class="fa-solid fa-gear text-brandGreen"></i>
+                <span class="text-xs font-medium">Settings</span>
+            </a>
+            
+            <!-- Quick Logout Button -->
+            <a href="Logout.html" class="bg-slate-800 hover:bg-red-900/40 text-slate-300 hover:text-red-400 p-2.5 rounded-xl transition border border-slate-700">
+                <i class="fa-solid fa-right-from-bracket text-sm"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto w-full p-4 space-y-5 mb-20">
+        
+        <!-- Page Title Header -->
+        <div class="text-center space-y-1">
+            <h1 class="text-xl font-bold tracking-tight text-slate-100">Daily Micro Tasks</h1>
+            <p class="text-xs text-slate-400">Earn extra income by completing short daily activities.</p>
+        </div>
+
+        <!-- Rule & Description Banner -->
+        <div class="bg-cardBg border border-brandGreen/30 rounded-2xl p-4 space-y-3 shadow-lg relative overflow-hidden">
+            <div class="flex items-start space-x-3">
+                <div class="bg-brandGreen/10 text-brandGreen p-3 rounded-xl shrink-0">
+                    <i class="fa-solid fa-stopwatch text-xl"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="text-sm font-bold text-slate-100">How Tasks Work</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Click task and get <span class="text-brandGreen font-bold">₦200</span>. Stay <span class="text-amber-400 font-bold">30 seconds</span> on the target page to earn your reward.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Daily Progress Bar -->
+            <div class="bg-darkBg border border-slate-800 rounded-xl p-3 space-y-2">
+                <div class="flex justify-between text-xs">
+                    <span class="text-slate-400">Daily Tasks Remaining</span>
+                    <span class="font-bold text-slate-200"><span id="completedCount">0</span>/5 Done</span>
+                </div>
+                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                    <div id="taskProgressBar" class="bg-brandGreen h-full rounded-full transition-all duration-300" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 Daily Tasks List -->
+        <div class="space-y-3">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1">Today's Tasks (5 Max)</h3>
+
+            <!-- Task 1 -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between space-x-3 shadow-md">
+                <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-md border border-blue-500/20">Task 1</span>
+                        <span class="text-[10px] text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30s</span>
+                    </div>
+                    <h4 class="text-xs font-bold text-slate-200">Visit Sponsored Sponsor Page</h4>
+                    <p class="text-[11px] font-semibold text-brandGreen">+₦200 Reward</p>
+                </div>
+                <button id="taskBtn1" onclick="startTask(1)" class="bg-brandGreen hover:bg-brandGreenHover text-darkBg font-bold px-3.5 py-2 rounded-xl text-xs transition shrink-0 shadow-md">
+                    Start Task
+                </button>
+            </div>
+
+            <!-- Task 2 -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between space-x-3 shadow-md">
+                <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-purple-500/10 text-purple-400 text-[10px] font-bold px-2 py-0.5 rounded-md border border-purple-500/20">Task 2</span>
+                        <span class="text-[10px] text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30s</span>
+                    </div>
+                    <h4 class="text-xs font-bold text-slate-200">Watch Partner Video Promo</h4>
+                    <p class="text-[11px] font-semibold text-brandGreen">+₦200 Reward</p>
+                </div>
+                <button id="taskBtn2" onclick="startTask(2)" class="bg-brandGreen hover:bg-brandGreenHover text-darkBg font-bold px-3.5 py-2 rounded-xl text-xs transition shrink-0 shadow-md">
+                    Start Task
+                </button>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between space-x-3 shadow-md">
+                <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-amber-500/10 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-md border border-amber-500/20">Task 3</span>
+                        <span class="text-[10px] text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30s</span>
+                    </div>
+                    <h4 class="text-xs font-bold text-slate-200">Check Growth Capital Blog</h4>
+                    <p class="text-[11px] font-semibold text-brandGreen">+₦200 Reward</p>
+                </div>
+                <button id="taskBtn3" onclick="startTask(3)" class="bg-brandGreen hover:bg-brandGreenHover text-darkBg font-bold px-3.5 py-2 rounded-xl text-xs transition shrink-0 shadow-md">
+                    Start Task
+                </button>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between space-x-3 shadow-md">
+                <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-teal-500/10 text-teal-400 text-[10px] font-bold px-2 py-0.5 rounded-md border border-teal-500/20">Task 4</span>
+                        <span class="text-[10px] text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30s</span>
+                    </div>
+                    <h4 class="text-xs font-bold text-slate-200">Review Community Guidelines</h4>
+                    <p class="text-[11px] font-semibold text-brandGreen">+₦200 Reward</p>
+                </div>
+                <button id="taskBtn4" onclick="startTask(4)" class="bg-brandGreen hover:bg-brandGreenHover text-darkBg font-bold px-3.5 py-2 rounded-xl text-xs transition shrink-0 shadow-md">
+                    Start Task
+                </button>
+            </div>
+
+            <!-- Task 5 -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between space-x-3 shadow-md">
+                <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-rose-500/10 text-rose-400 text-[10px] font-bold px-2 py-0.5 rounded-md border border-rose-500/20">Task 5</span>
+                        <span class="text-[10px] text-slate-400"><i class="fa-regular fa-clock mr-1"></i>30s</span>
+                    </div>
+                    <h4 class="text-xs font-bold text-slate-200">Visit Featured Partner Site</h4>
+                    <p class="text-[11px] font-semibold text-brandGreen">+₦200 Reward</p>
+                </div>
+                <button id="taskBtn5" onclick="startTask(5)" class="bg-brandGreen hover:bg-brandGreenHover text-darkBg font-bold px-3.5 py-2 rounded-xl text-xs transition shrink-0 shadow-md">
+                    Start Task
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Task Active Modal Overlay (30 Second Countdown Timer) -->
+    <div id="taskModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 w-full max-w-xs text-center space-y-4 shadow-2xl">
+            <div class="w-16 h-16 bg-brandGreen/10 text-brandGreen rounded-full flex items-center justify-center mx-auto text-2xl border border-brandGreen/20">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+            </div>
+            <div class="space-y-1">
+                <h3 class="font-bold text-base text-slate-100">Task In Progress</h3>
+                <p class="text-xs text-slate-400">Please stay on this screen for 30 seconds to earn your ₦200 reward.</p>
+            </div>
+            <div class="bg-darkBg p-3 rounded-xl border border-slate-800">
+                <span id="timerDisplay" class="text-3xl font-black text-amber-400">30s</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-darkBg/95 backdrop-blur border-t border-slate-800 py-3 px-6 flex justify-around items-center z-20 max-w-md mx-auto">
+        <a href="Dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-house text-base"></i>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="Investment.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-chart-pie text-base"></i>
+            <span class="text-[10px] font-medium">Tiers</span>
+        </a>
+        <a href="Refer.html" class="flex flex-col items-center text-slate-400 hover:text-slate-200 space-y-1 transition">
+            <i class="fa-solid fa-users text-base"></i>
+            <span class="text-[10px] font-medium">Referrals</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script>
+        let completedTasks = 0;
+
+        function startTask(taskId) {
+            const btn = document.getElementById(`taskBtn${taskId}`);
+            if (btn.classList.contains('completed')) return;
+
+            const modal = document.getElementById('taskModal');
+            const timerDisplay = document.getElementById('timerDisplay');
+            modal.classList.remove('hidden');
+
+            let timeLeft = 30;
+            timerDisplay.innerText = `${timeLeft}s`;
+
+            const countdown = setInterval(() => {
+                timeLeft--;
+                timerDisplay.innerText = `${timeLeft}s`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    modal.classList.add('hidden');
+                    
+                    // Mark task as completed
+                    btn.innerText = 'Completed ✔';
+                    btn.classList.remove('bg-brandGreen', 'hover:bg-brandGreenHover', 'text-darkBg');
+                    btn.classList.add('bg-slate-800', 'text-slate-400', 'completed');
+                    btn.disabled = true;
+
+                    // Update Progress
+                    completedTasks++;
+                    document.getElementById('completedCount').innerText = completedTasks;
+                    document.getElementById('taskProgressBar').style.width = `${(completedTasks / 5) * 100}%`;
+
+                    alert('Congratulations! You earned ₦200 for completing this task.');
+                }
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
